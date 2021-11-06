@@ -1,3 +1,23 @@
-div {
-  color: white;
-}/*# sourceMappingURL=main.css.map */
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  width: 200px;
+}
+
+/* NAVIGATION BAR  */
+/* 
+-fixed on top of page
+-bg color: #ffffff
+-logo:#335576
+-current active page underline #DB7A4E 
+*/
+/* FOOTER */
+/*
+background-color: #FEFAF5;
+footer titles and text: #335576;
+subtitles: #DB7A4E
+*//*# sourceMappingURL=main.css.map */

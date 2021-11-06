@@ -3,9 +3,18 @@
 
 // set border-box value on all elements, including ::after and ::before (not included in * selector), box-sizing is not an inherited value
 // * ::after ::before { check syntax has comma or space?
-  // box-sizing: border-box;}
-  // body{margin:0;}
+  body{
+  box-sizing: border-box;
+  margin:0;
+  padding:0;
+  
+  }
 
+
+  img {
+
+    width:200px;
+  }
 // FONTS
 // base font for the site Verdana (where to get verdana? download?) 
 
@@ -28,35 +37,35 @@ subtitles: #DB7A4E
 //seperate card class or use mixin and apply style to both card classes?
 // or class modifier?
 //.card in global
-.card{}
+// .card{}
 
-//this goes in destinations scss
-// option: extends card
-.destinations-card{
-
-
-  &__link{
-
-  }
-
-  &__image{
-
-  }
-
-  &__title{
-
-  }
-}
-
-//this goes in main scss
-.itinirary-card{
+// //this goes in destinations scss
+// // option: extends card
+// .destinations-card{
 
 
-  &__title{
+//   &__link{
 
-  }
+//   }
 
-  &__activity{
+//   &__image{
 
-  }
-}
+//   }
+
+//   &__title{
+
+//   }
+// }
+
+// //this goes in main scss
+// .itinirary-card{
+
+
+//   &__title{
+
+//   }
+
+//   &__activity{
+
+//   }
+// }
