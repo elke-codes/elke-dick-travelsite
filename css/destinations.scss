@@ -6,26 +6,66 @@
 
 // img must take up full width and height of the background for the page
 // activities background #FEFAF5
+
+//ITINIRARY
 .itinirary{
-  background-image:url(/assets/Images/hawaii.jpg);
-  background-size: cover;
+  // background-image:url(/assets/Images/hawaii.jpg);
+  // background-size: cover;
   // padding: 60px;
-  // width: 100vw;
+  width: 100vw;
+  height:80vh;
+  padding:2rem;
+
 
   &__wrapper{
   display:flex;
   justify-content: center;
+  }
 
+  &__title{
+    margin:0;
+  }
 }
+//check how to nest modifier
+.itinirary--hawaii{
+  background-image:url("../assets/Images/hawaii.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.itinirary--iceland{
+  background-image:url("../assets/Images/iceland.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.itinirary--greece{
+  background-image:url("../assets/Images/greece.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+
+
+
 .itinirary-card{
     margin: 30px;
     overflow: hidden;
-    position: relative;
- }
+    background-color: white;
+    text-align: center;
+    padding:0 20px;
+    display: flex;
+    flex-direction: column;
+
   &__title{
-   
+   border-bottom: 2px solid black;
+  }
+
+  &__copy{
+    padding: 15px;
+    background-color:#FEFAF5;
+    margin-top:0.5rem;
   }
 }
+
 
 
 // easter egg* fireworks https://www.youtube.com/watch?v=K4K7HNavK4U so sick, and uses only properties and values we ve seen in the demo, i believe i can figure this out
