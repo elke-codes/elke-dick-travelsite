@@ -18,45 +18,88 @@
 <body>
 
   <!-- NAVIGATION BAR -->
-  <!-- Header -->
-  <!-- separate nav and logo? which tag? h1 ? BECAUSE THERE IS NOT PAGE TITLE? The name of the book is travel site..
+  <!-- CONSIDERATIONS separate nav and logo? which tag? h1 ? BECAUSE THERE IS NO PAGE TITLE? The name of the book is travel site..
+    ALSO consider mobile, where links might go in a hamburger menu, and the logo/title should still be visible! 
+    
   The signature “Yale University” is normally included in the top-left corner of the header region on web pages. The site title is usually below the signature set in the YaleNew Roman typeface. https://yaleidentity.yale.edu/web
-  -->
-  <!-- link/Logo/Wordmark/Title -->
-  <!-- unordered list menu items -->
-  <!-- link/text: Home current active page-->
-  <!-- link/text: Hawaii -->
-  <!-- link/text: Iceland -->
-  <!-- link/text: Greece -->
+  CONCLUSION -- SEPARATING THEM
+-->
+
+  <!-- Header -->
+  <header class="header">
+    <!-- link/Logo/Wordmark/Title -->
+    <h1 class="header__title"><a href="./index.html">Travel Site</a> </h1>
+    <!-- unordered list menu items -->
+    <ul class="header__menu">
+      <!-- link/text: Home current active page-->
+      <li class="header__menu-item header__menu-item--active"><a href="./index.html">Home</a></li>
+      <!-- link/text: Hawaii -->
+      <li class="header__menu-item"><a href="/pages/hawaii.html">Hawaii</a></li>
+      <!-- link/text: Iceland -->
+      <li class="header__menu-item"><a href="/pages/iceland.html">Iceland</a></li>
+      <!-- link/text: Greece -->
+      <li class="header__menu-item"><a href="/pages/greece.html">Greece</a></li>
+    </ul>
+  </header>
 
 
   <!-- HERO SECTION -->
+  <!-- hero section left 2/3?-->
   <!-- slogan hero -->
   <!-- text hero -->
   <!-- ?link get started -->
   <!-- button get started -->
+  <!-- hero section right 1/3? -->
   <!-- image hero  -->
 
 
   <!-- RECOMMENDATIONS SECTION -->
-  <!-- title
-            h2? -->
-  <!--  destination cards  -->
-  <!-- link destination card Hawaii  must use a tag around  -->
-  <!-- image destination card Hawaii -->
-  <!-- title /name  destination card Hawaii -->
-  <!-- link destination card Iceland -->
-  <!-- title /name destination card Iceland -->
-  <!-- link destination card Greece  must use a tag around  -->
-  <!-- image destination card Greece -->
-  <!-- title /name destination card Greece -->
+  <section class="destinations">
+    <!-- title h2, each page should only have one h1 tag -->
+    <h2 class="destinations__title">Recommendations</h2>
 
+    <!--  destination cards  -->
+    <!-- need class here for wrapping 3 cards? -->
+    <!-- destination card hawai -->
+    <article class="card destinations-card">
+      <!-- link destination card Hawaii  must use a tag around  -->
+      <a href="/pages/hawaii.html" class="destinations-card__link">
+        <!-- image destination card Hawaii -->
+        <img src="#" alt="" class="destinations-card__image">
+        <!-- title /name  destination card Hawaii -->
+        <h3 class="destinations-card__title">Hawaii</h3>
+      </a>
+    </article>
+    <!-- destination card Iceland -->
+    <article class="card destinations-card">
+      <!-- link destination card Iceland -->
+      <a href="/pages/iceland.html" class="destinations-card__link">
+        <!-- image destination card Iceland -->
+        <img src="#" alt="" class="destinations-card__image">
+        <!-- title /name destination card Iceland -->
+        <h3 class="destinations-card__title">Iceland</h3>
+      </a>
+    </article>
+    <!-- destination card Greece -->
+    <article class="card destinations-card">
+      <!-- link destination card Greece  must use a tag around  -->
+      <a href="/pages/greece.html" class="destinations-card__link">
+        <!-- image destination card Greece -->
+        <img src="#" alt="" class="destinations-card__image">
+        <!-- title /name destination card Greece -->
+        <h3 class="destinations-card__title">Greece</h3>
+      </a>
+    </article>
+
+  </section>
 
   <!-- FOOOTER -->
   <!-- footer -->
+  <!-- contact block -->
   <!-- title Contact -->
   <!-- subtitle contact EMAIL -->
   <!-- link/text contact: email -->
+  <!-- hours block -->
   <!-- tittle Hours -->
   <!-- subtitle Hours MONDAY-FRIDAY -->
   <!-- text hours: 9:00 AM -5:00 PM -->
@@ -64,6 +107,7 @@
   <!-- text hours : 10:00 AM -4:00 PM -->
   <!-- subtitle hours SUNDAY -->
   <!-- text hours: Closed -->
+  <!-- social block -->
   <!-- title social Social -->
   <!-- link social instagram -->
   <!-- icon social instagram -->
