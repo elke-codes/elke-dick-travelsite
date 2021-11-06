@@ -1,16 +1,57 @@
 // HOME PAGE SCSS
 
-@use "css/partials/_global.scss";
-
+@use "./partials/_global.scss";
 
 // check if correct syntax and path
 // @use"../colors" check if correct syntax and path
 
 //HERO
 // hero background: #FEFEF5;
-//text content left aligned
-//hero slogan color #335576
-//hero get started button #335576;
+.hero{
+    // margin-top: 80px;
+    padding: 60px;
+    background-color: #FEFEF5;
+    display: flex;
+    height: 500px;
+    align-items: flex-end;
+    align-content: space-between;
+  &__left{
+    width: 60%;
+    display:flex;
+    flex-direction: column;
+
+
+  }
+  &__slogan{
+  text-align: left;
+  font-size: 3rem;
+  color: #335576;
+  }
+
+  &__copy{
+    font-size:1rem;
+    width:80%;
+    margin-bottom:30px;
+  }
+
+  &__image{
+    // height:80%;
+    width: 60%;
+  }
+
+  &__right{
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+.button{
+  background-color:#335576;
+  width:fit-content;
+  color:#ffffff;
+  border-radius: 20px;
+  padding:10px 30px;
+}
 
 //RECOMMENDATIONS SECTION
 // recommendations title #335576
@@ -19,4 +60,31 @@
   // border radius 5px
   // border: 1px solid rgba(0,0,0,0.2) aka black with opacity of 20%
   // box-shadow: 0px 4px 4px rgba(0,0,0,02)
- 
+
+.destinations{
+  padding:60px;}
+
+.destinations__wrapper{
+  display:flex;
+  justify-content: center;
+
+}
+.destinations-card{
+    margin: 30px;
+    overflow: hidden;
+    position: relative;
+
+  &__image{
+    height:100%;
+    width: 100%;
+  }
+
+  &__title{
+    color:#ffffff;
+    font-size: 2rem;
+    position:absolute;
+    position: absolute;
+    top: 80%;
+    right: 5%;
+  }
+}

@@ -28,7 +28,9 @@
   <!-- Header -->
   <header class="header">
     <!-- link/Logo/Wordmark/Title -->
-    <h1 class="header__title"><a href="./index.html">Travel Site</a> </h1>
+    <h1 class="header__title">
+      <a class="header__title-link" href="./index.html">Travel Site</a>
+    </h1>
     <!-- unordered list menu items -->
     <ul class="header__menu">
       <!-- link/text: Home current active page-->
@@ -44,24 +46,26 @@
 
 
   <!-- HERO SECTION -->
-  <!-- hero section left 2/3?-->
-  <!-- slogan hero -->
-  <h2 class="hero__slogan">Travelling Comes With Endless Discoveries</h2>
-  <!-- text hero -->
-  <p class="hero__copy">Don't let your dreams be just dreams. Experience the world by booking a vacation with us now.
-  </p>
-  <!-- get started -->
-  <!-- link get started -->
-  <div class="button">
-    <a href="#" class="button__link">
-      <!-- button get started -->
-      <p class="button__copy">Get started</p>
-    </a>
-  </div>
-  <!-- hero section right 1/3? -->
-  <!-- image hero  -->
-  <img src="/assets/Images/hero.png" alt="Plane flying around earth with destination pin" class="hero__image">
+  <!-- hero -->
+  <section class="hero">
+    <!-- hero section left 2/3?-->
+    <div class="hero__left">
+      <!-- slogan hero -->
+      <h2 class="hero__slogan">Travelling Comes With Endless Discoveries</h2>
+      <!-- text hero -->
+      <p class="hero__copy">Don't let your dreams be just dreams. Experience the world by booking a vacation with us
+        now.
+      </p>
 
+      <!-- button get started -->
+      <p class="button">Get started</p>
+    </div>
+    <!-- hero section right -->
+    <div class="hero__right">
+      <!-- image hero  -->
+      <img src="/assets/Images/hero.png" alt="Plane flying around earth with destination pin" class="hero__image">
+    </div>
+  </section>
 
   <!-- RECOMMENDATIONS SECTION -->
   <section class="destinations">
@@ -70,38 +74,41 @@
 
     <!--  destination cards  -->
     <!-- need class here for wrapping 3 cards? -->
-    <!-- destination card hawai -->
-    <article class="card destinations-card">
-      <!-- link destination card Hawaii  must use a tag around  -->
-      <a href="/pages/hawaii.html" class="destinations-card__link">
-        <!-- image destination card Hawaii -->
-        <img src="/assets/Images/hawaii.jpg" alt="Hawaii beach, ocean and palmtree" class="destinations-card__image">
-        <!-- title /name  destination card Hawaii -->
-        <h3 class="destinations-card__title">Hawaii</h3>
-      </a>
-    </article>
-    <!-- destination card Iceland -->
-    <article class="card destinations-card">
-      <!-- link destination card Iceland -->
-      <a href="/pages/iceland.html" class="destinations-card__link">
-        <!-- image destination card Iceland -->
-        <img src="/assets/Images/iceland.jpg" alt="Iceland mountainrange with river running through"
-          class="destinations-card__image">
-        <!-- title /name destination card Iceland -->
-        <h3 class="destinations-card__title">Iceland</h3>
-      </a>
-    </article>
-    <!-- destination card Greece -->
-    <article class="card destinations-card">
-      <!-- link destination card Greece  must use a tag around  -->
-      <a href="/pages/greece.html" class="destinations-card__link">
-        <!-- image destination card Greece -->
-        <img src="/assets/Images/greece.jpg" alt="Greek ruin and mountain" class="destinations-card__image">
-        <!-- title /name destination card Greece -->
-        <h3 class="destinations-card__title">Greece</h3>
-      </a>
-    </article>
+    <div class="destinations__wrapper">
+      <!-- destination card hawai -->
+      <article class="card destinations-card">
 
+        <!-- link destination card Hawaii  must use a tag around  -->
+        <a href="/pages/hawaii.html" class="destinations-card__link">
+          <!-- title /name  destination card Hawaii -->
+          <h3 class="destinations-card__title">Hawaii</h3>
+          <!-- image destination card Hawaii -->
+          <img src="/assets/Images/hawaii.jpg" alt="Hawaii beach, ocean and palmtree" class="destinations-card__image">
+        </a>
+      </article>
+      <!-- destination card Iceland -->
+      <article class="card destinations-card">
+
+        <!-- link destination card Iceland -->
+        <a href="/pages/iceland.html" class="destinations-card__link">
+          <!-- title /name destination card Iceland -->
+          <h3 class="destinations-card__title">Iceland</h3>
+          <!-- image destination card Iceland -->
+          <img src="/assets/Images/iceland.jpg" alt="Iceland mountainrange with river running through"
+            class="destinations-card__image">
+        </a>
+      </article>
+      <!-- destination card Greece -->
+      <article class="card destinations-card">
+        <!-- link destination card Greece  must use a tag around  -->
+        <a href="/pages/greece.html" class="destinations-card__link">
+          <!-- title /name destination card Greece -->
+          <h3 class="destinations-card__title">Greece</h3>
+          <!-- image destination card Greece -->
+          <img src="/assets/Images/greece.jpg" alt="Greek ruin and mountain" class="destinations-card__image">
+        </a>
+      </article>
+    </div>
   </section>
 
   <!-- FOOTER -->

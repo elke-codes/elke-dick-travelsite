@@ -1,7 +1,26 @@
-body {
+* ::after ::before {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin: 0;
+  margin-top: 80px;
+}
+
+h1 {
+  margin: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
 }
 
 /* NAVIGATION BAR  */
@@ -11,9 +30,62 @@ body {
 -logo:#335576
 -current active page underline #DB7A4E 
 */
+.header {
+  position: fixed;
+  top: 0;
+  padding-top: 20px;
+  background-color: #ffffff;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: baseline;
+}
+.header__title {
+  margin-right: 600px;
+}
+.header__title-link {
+  color: #335576;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+.header__menu {
+  display: flex;
+}
+.header__menu-item {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin-left: 20px;
+  padding-bottom: 10px;
+}
+.header__menu-item--active {
+  border-bottom: 3px solid #DB7A4E;
+}
+
+.card {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  box-shadow: 0px 4px 4px black;
+  width: 20vw;
+  height: 30vw;
+}
+
 /* FOOTER */
 /*
 background-color: #FEFAF5;
 footer titles and text: #335576;
 subtitles: #DB7A4E
-*//*# sourceMappingURL=destinations.css.map */
+*/
+.itinirary {
+  background-image: url(/assets/Images/hawaii.jpg);
+  background-size: cover;
+}
+.itinirary__wrapper {
+  display: flex;
+  justify-content: center;
+}
+.itinirary .itinirary-card {
+  margin: 30px;
+  overflow: hidden;
+  position: relative;
+}/*# sourceMappingURL=destinations.css.map */

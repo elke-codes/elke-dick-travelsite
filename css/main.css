@@ -1,11 +1,26 @@
-body {
+* ::after ::before {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-img {
-  width: 200px;
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin: 0;
+  margin-top: 80px;
+}
+
+h1 {
+  margin: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
 }
 
 /* NAVIGATION BAR  */
@@ -15,9 +30,116 @@ img {
 -logo:#335576
 -current active page underline #DB7A4E 
 */
+.header {
+  position: fixed;
+  top: 0;
+  padding-top: 20px;
+  background-color: #ffffff;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: baseline;
+}
+.header__title {
+  margin-right: 600px;
+}
+.header__title-link {
+  color: #335576;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+.header__menu {
+  display: flex;
+}
+.header__menu-item {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin-left: 20px;
+  padding-bottom: 10px;
+}
+.header__menu-item--active {
+  border-bottom: 3px solid #DB7A4E;
+}
+
+.card {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  box-shadow: 0px 4px 4px black;
+  width: 20vw;
+  height: 30vw;
+}
+
 /* FOOTER */
 /*
 background-color: #FEFAF5;
 footer titles and text: #335576;
 subtitles: #DB7A4E
-*//*# sourceMappingURL=main.css.map */
+*/
+.hero {
+  padding: 60px;
+  background-color: #FEFEF5;
+  display: flex;
+  height: 500px;
+  align-items: flex-end;
+  align-content: space-between;
+}
+.hero__left {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+}
+.hero__slogan {
+  text-align: left;
+  font-size: 3rem;
+  color: #335576;
+}
+.hero__copy {
+  font-size: 1rem;
+  width: 80%;
+  margin-bottom: 30px;
+}
+.hero__image {
+  width: 60%;
+}
+.hero__right {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.button {
+  background-color: #335576;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  color: #ffffff;
+  border-radius: 20px;
+  padding: 10px 30px;
+}
+
+.destinations {
+  padding: 60px;
+}
+
+.destinations__wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.destinations-card {
+  margin: 30px;
+  overflow: hidden;
+  position: relative;
+}
+.destinations-card__image {
+  height: 100%;
+  width: 100%;
+}
+.destinations-card__title {
+  color: #ffffff;
+  font-size: 2rem;
+  position: absolute;
+  position: absolute;
+  top: 80%;
+  right: 5%;
+}/*# sourceMappingURL=main.css.map */

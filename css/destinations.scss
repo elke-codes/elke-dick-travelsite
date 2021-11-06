@@ -1,11 +1,31 @@
 // DESTINATIONS
 
-@use "../partials/global";
-// @use"../global" check if correct syntax and path
+@use "./partials/_global";
+
 // @use"../colors" check if correct syntax and path
 
 // img must take up full width and height of the background for the page
 // activities background #FEFAF5
+.itinirary{
+  background-image:url(/assets/Images/hawaii.jpg);
+  background-size: cover;
+  // padding: 60px;
+  // width: 100vw;
+
+  &__wrapper{
+  display:flex;
+  justify-content: center;
+
+}
+.itinirary-card{
+    margin: 30px;
+    overflow: hidden;
+    position: relative;
+ }
+  &__title{
+   
+  }
+}
 
 
 // easter egg* fireworks https://www.youtube.com/watch?v=K4K7HNavK4U so sick, and uses only properties and values we ve seen in the demo, i believe i can figure this out

@@ -1,22 +1,35 @@
 // GLOBAL SCSS
 
-
 // set border-box value on all elements, including ::after and ::before (not included in * selector), box-sizing is not an inherited value
-// * ::after ::before { check syntax has comma or space?
-  body{
+* ::after ::before{
   box-sizing: border-box;
   margin:0;
   padding:0;
+  }
+
+  body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin:0;
+    // padding: 0;
+    margin-top:80px;
+  }
+
+
+  h1 {
+  margin: 0;
+  }
+
   
+
+  li {
+    list-style: none;
   }
 
-
-  img {
-
-    width:200px;
+  a {
+    text-decoration: none;
+    color:black;
   }
-// FONTS
-// base font for the site Verdana (where to get verdana? download?) 
+
 
 /* NAVIGATION BAR  */
 /* 
@@ -25,6 +38,54 @@
 -logo:#335576
 -current active page underline #DB7A4E 
 */
+
+
+.header{
+  position: fixed;
+  top:0;
+  padding-top:20px;
+  background-color: #ffffff;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: baseline;
+
+  &__title{
+    margin-right: 600px;
+ 
+  }
+  &__title-link{
+    color:#335576;
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+
+  &__menu{
+    display: flex;
+
+  }
+  
+  &__menu-item{
+    height:fit-content;
+    margin-left:20px;
+    padding-bottom: 10px;
+ 
+  }
+  &__menu-item--active{
+    border-bottom: 3px solid #DB7A4E;
+  }
+}
+
+
+.card{
+  border:1px solid rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0px 4px 4px rgba(0,0,0,02);
+  width:20vw;
+  height:30vw;
+  // display:flex;
+ 
+}
 
 
 /* FOOTER */
