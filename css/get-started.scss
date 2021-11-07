@@ -1,54 +1,94 @@
-@use "./partials/_global";
+// GET STARTED
+
+@use "./partials/_global.scss" as *;
+@use "./partials/_colors.scss" as *;
+@use "./partials/_mixins.scss" as *;
 
 // form example code from MDN https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form
 .form {
-  
-  &__name{
-  display: table;
-}
-  &__email{
+  margin-left: 2rem;
+  &__name {
+    display: table;
+  }
+  &__email {
     display: table-row;
   }
 }
 
-
-label, input {
+label,
+input {
   display: table-cell;
-  margin-bottom: 10px;
-  border-radius: 5px;
+  @include margin-bottom();
+  // margin-bottom: 2rem;
+  @include border-radius();
+  // border-radius: 5px;
 }
 
-
-.get-started{
-  display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    &__title{
-      align-self: flex-start;
-    }
+label {
+  @include margin-bottom();
+  // margin-bottom:2rem;
 }
 
-.wrapper{
+.get-started {
+  @include main-section();
+  @include flex(column);
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: center;
+  @include align-items();
+  // align-items: center;
+  &__title {
+    align-self: flex-start;
+  }
+  &--bg {
+    @extend .get-started;
+    @include section-background(url("../assets/Images/hawaii-flipped.jpg"));
+    // background-image:url("../assets/Images/hawaii.jpg");
+    // background-size: cover;
+    // background-position: center;
+  }
+}
+
+.booking {
   // display: flex;
   border: 1px solid rgba(0, 0, 0, 0.2);
-  border-radius: 5px;
-  box-shadow: 0px 2px 2px #335576;
+  box-shadow: 0px 2px 2px $primary-text;
   background-color: rgba(255, 255, 255, 0.75);
   // justify-content: space-around;
   padding: 7%;
-  margin:5%;
-  width: 70%;
+  margin: 5%;
+  @include width(70%);
+  // width: 70%;
+  @include flex(column);
+  // display: flex;
+  // flex-direction: column;
+  align-items: center;
 
-  &__top{
-    display: flex;
-    justify-content: space-around;
+  &__copy {
+    font-weight: bold;
+  }
+  &__title {
+    @include flex(row, space-around);
+    // display: flex;
+    // justify-content: space-around;
+    @include margin-bottom();
+    @include font-size(1.5rem);
+    // font-size: 1.5rem;
+    &::after {
+      position: relative;
+      content: "💫";
+      font-size: 2rem;
+      top: -10px;
+      left: -20px;
+    }
   }
 
-  &__bottom{
-    margin-top: 2rem;
-    display:flex;
-    justify-content: center;
+  &__bottom {
+    @include flex();
+    // display:flex;
+    // justify-content: center;
+  }
+  &__top {
+    @include flex();
   }
 }
-

@@ -1,71 +1,88 @@
 // DESTINATIONS
 
-@use "./partials/_global";
-
-// @use"../colors" check if correct syntax and path
-
-// img must take up full width and height of the background for the page
-// activities background #FEFAF5
+@use "./partials/_global.scss" as *;
+@use "./partials/_colors.scss" as *;
+@use "./partials/_mixins.scss" as *;
 
 //ITINIRARY
-.itinirary{
-  padding: 7%;
+.itinirary {
+  @include main-section();
+  // padding: 7%;
 
+  // &__wrapper{
+  //   @include flex();
+  // // display:flex;
+  // // justify-content: center;
+  // }
 
+  // &__title{
+  //   @include margin-reset();
+  //   // margin:0;
+  //   color: $neutral-light;
+  //   font-size:4rem;
+  // }
 
-  &__wrapper{
-  display:flex;
-  justify-content: center;
+  &--hawaii {
+    @extend .itinirary;
+    @include section-background(url("../assets/Images/hawaii.jpg"));
+    // background-image:url("../assets/Images/hawaii.jpg");
+    // background-size: cover;
+    // background-position: center;
   }
-
-  &__title{
-    margin:0;
-    color: white;
-    font-size:4rem;
+  &--iceland {
+    @extend .itinirary;
+    @include section-background(url("../assets/Images/iceland.jpg"));
+    // background-image:url("../assets/Images/iceland.jpg");
+    // background-size: cover;
+    // background-position: center;
+  }
+  &--greece {
+    @extend .itinirary;
+    @include section-background(url("../assets/Images/greece.jpg"));
+    // background-image:url("../assets/Images/greece.jpg");
+    // background-size: cover;
+    // background-position: center;
   }
 }
+
 //check how to nest modifier
-.itinirary--hawaii{
-  background-image:url("../assets/Images/hawaii.jpg");
-  background-size: cover;
-  background-position: center;
-}
-.itinirary--iceland{
-  background-image:url("../assets/Images/iceland.jpg");
-  background-size: cover;
-  background-position: center;
-}
-.itinirary--greece{
-  background-image:url("../assets/Images/greece.jpg");
-  background-size: cover;
-  background-position: center;
-}
+// .itinirary--hawaii{
+//   background-image:url("../assets/Images/hawaii.jpg");
+//   background-size: cover;
+//   background-position: center;
+// }
+// .itinirary--iceland{
+//   background-image:url("../assets/Images/iceland.jpg");
+//   background-size: cover;
+//   background-position: center;
+// }
+// .itinirary--greece{
+//   background-image:url("../assets/Images/greece.jpg");
+//   background-size: cover;
+//   background-position: center;
+// }
 
+.itinirary-card {
+  @include card();
+  margin: 2rem;
+  overflow: hidden;
+  background-color: $neutral-light;
+  text-align: center;
+  padding: 1rem;
+  @include flex(column, flex-start);
+  // display: flex;
+  // flex-direction: column;
+  color: $neutral-dark;
 
-
-
-.itinirary-card{
-    margin: 30px;
-    overflow: hidden;
-    background-color: white;
-    text-align: center;
-    padding:1rem;
-    display: flex;
-    flex-direction: column;
-
-  &__title{
-   border-bottom: 2px solid black;
+  &__title {
+    border-bottom: 2px solid $neutral-dark;
   }
 
-  &__copy{
-    padding: 15px;
-    background-color:#FEFAF5;
-    margin-top:0.5rem;
+  &__copy {
+    padding: 1rem;
+    background-color: $background-color;
+    margin-top: 0.5rem;
   }
 }
-
-
 
 // easter egg* fireworks https://www.youtube.com/watch?v=K4K7HNavK4U so sick, and uses only properties and values we ve seen in the demo, i believe i can figure this out
-
-

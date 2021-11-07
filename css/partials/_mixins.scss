@@ -1,0 +1,70 @@
+@use "./colors" as *;
+
+@mixin flex($flex-direction: row, $justify-content: center) {
+  display: flex;
+  flex-direction: $flex-direction;
+  justify-content: $justify-content;
+}
+
+@mixin align-items($align-items: center) {
+  align-items: $align-items;
+}
+
+@mixin margin-bottom($margin-bottom: 2rem) {
+  margin-bottom: $margin-bottom;
+}
+
+@mixin margin-reset($margin: 0) {
+  margin: $margin;
+}
+
+@mixin width($width: 100%) {
+  width: $width;
+}
+
+@mixin main-section() {
+  padding: 7%;
+
+  &__wrapper {
+    @include flex();
+    // display:flex;
+    // justify-content: center;
+  }
+
+  &__title {
+    @include margin-reset();
+    // margin:0;
+    color: $neutral-light;
+    @include font-size(4rem);
+    // font-size: 4rem;
+  }
+}
+
+@mixin section-background($background-image) {
+  background-image: $background-image;
+  background-size: cover;
+  background-position: center;
+}
+
+@mixin card() {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  @include border-radius();
+  // border-radius: 5px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 02);
+  width: 20vw;
+  height: 32vw;
+
+  &:hover {
+    opacity: 0.75;
+    box-shadow: 7px 7px 7px rgba(0, 0, 0, 02);
+    transform: scale(1.2);
+  }
+}
+
+@mixin border-radius($border-radius: 5px) {
+  border-radius: $border-radius;
+}
+
+@mixin font-size($font-size: 1rem) {
+  font-size: $font-size;
+}

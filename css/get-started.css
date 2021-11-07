@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   box-sizing: border-box;
 }
@@ -6,11 +7,14 @@ body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   margin: 0;
   padding: 0;
-  margin-top: 80px;
+  margin-top: 5rem;
   color: #335576;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   margin: 0;
 }
 
@@ -24,7 +28,7 @@ li {
 
 a {
   text-decoration: none;
-  color: #335576;
+  color: #000000;
 }
 
 /* NAVIGATION BAR  */
@@ -42,8 +46,12 @@ a {
   background-color: #ffffff;
   width: 100%;
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: baseline;
+}
+.header__title:hover {
+  transform: scale(1.2);
 }
 .header__title-link {
   color: #335576;
@@ -57,8 +65,8 @@ a {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  margin-left: 20px;
-  padding-bottom: 10px;
+  margin-left: 1.25rem;
+  padding-bottom: 0.625rem;
 }
 .header__menu-item:hover {
   border-bottom: 3px solid #335576;
@@ -76,8 +84,8 @@ a {
   width: -moz-fit-content;
   width: fit-content;
   color: #ffffff;
-  border-radius: 20px;
-  padding: 10px 30px;
+  border-radius: 1.25rem;
+  padding: 0.625rem 1.875rem;
 }
 .button:hover {
   transform: scale(1.2);
@@ -87,37 +95,45 @@ a {
   padding: 0;
 }
 
-.card {
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  border-radius: 5px;
-  box-shadow: 0px 4px 4px black;
-  width: 20vw;
-  height: 32vw;
-}
-.card:hover {
-  opacity: 0.75;
-  box-shadow: 7px 7px 7px black;
-  transform: scale(1.2);
-}
-
 /* FOOTER */
+/*
+background-color: #FEFAF5;
+footer titles and text: #335576;
+subtitles: #DB7A4E
+*/
 .footer {
   background-color: #FEFAF5;
   color: #335576;
+  padding: 3rem 0;
   display: flex;
+  flex-direction: row;
   justify-content: center;
 }
 .footer__wrapper {
   display: flex;
-  width: 70%;
+  flex-direction: row;
   justify-content: space-between;
+  width: 70%;
 }
 .footer__title {
   margin-bottom: 0;
+  font-size: 1.5rem;
 }
 .footer__icon {
-  height: 30px;
-  width: 30px;
+  height: 2.125rem;
+  width: auto;
+  margin-right: 2rem;
+}
+.footer__link {
+  color: #335576;
+}
+.footer__subtitle {
+  color: #DB7A4E;
+  font-size: 0.75rem;
+}
+.footer__copy {
+  margin: 0;
+  font-size: 1rem;
 }
 
 .hours {
@@ -125,19 +141,19 @@ a {
 }
 .hours__wrapper {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
 }
 
 .social {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 }
 
-/*
-background-color: #FEFAF5;
-footer titles and text: #335576;
-subtitles: #DB7A4E
-*/
+.form {
+  margin-left: 2rem;
+}
 .form__name {
   display: table;
 }
@@ -145,37 +161,79 @@ subtitles: #DB7A4E
   display: table-row;
 }
 
-label, input {
+label,
+input {
   display: table-cell;
-  margin-bottom: 10px;
+  margin-bottom: 2rem;
   border-radius: 5px;
 }
 
-.get-started {
+label {
+  margin-bottom: 2rem;
+}
+
+.get-started, .get-started--bg {
+  padding: 7%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
+.get-started__wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.get-started__title {
+  margin: 0;
+  color: #ffffff;
+  font-size: 4rem;
+}
 .get-started__title {
   align-self: flex-start;
 }
+.get-started--bg {
+  background-image: url("../assets/Images/hawaii-flipped.jpg");
+  background-size: cover;
+  background-position: center;
+}
 
-.wrapper {
+.booking {
   border: 1px solid rgba(0, 0, 0, 0.2);
-  border-radius: 5px;
   box-shadow: 0px 2px 2px #335576;
   background-color: rgba(255, 255, 255, 0.75);
   padding: 7%;
   margin: 5%;
   width: 70%;
-}
-.wrapper__top {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.booking__copy {
+  font-weight: bold;
+}
+.booking__title {
+  display: flex;
+  flex-direction: row;
   justify-content: space-around;
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
 }
-.wrapper__bottom {
-  margin-top: 2rem;
+.booking__title::after {
+  position: relative;
+  content: "💫";
+  font-size: 2rem;
+  top: -10px;
+  left: -20px;
+}
+.booking__bottom {
   display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.booking__top {
+  display: flex;
+  flex-direction: row;
   justify-content: center;
 }/*# sourceMappingURL=get-started.css.map */

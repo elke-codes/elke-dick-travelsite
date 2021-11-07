@@ -1,85 +1,90 @@
 // HOME PAGE SCSS
 
-@use "./partials/_global.scss";
-
-// check if correct syntax and path
-// @use"../colors" check if correct syntax and path
+@use "./partials/_global.scss" as *;
+@use "./partials/_colors.scss" as *;
+@use "./partials/_mixins.scss" as *;
 
 //HERO
 // hero background: #FEFAF5;
-.hero{
+.hero {
   padding: 7%;
-  background-color: #FEFAF5;
-  display: flex;
-  align-items: center;
+  background-color: $background-color;
+  @include flex();
+  // display: flex;
+  @include align-items();
+  // align-items: center;
 
-  &__left{
-    width: 70%;
-    display:flex;
-    flex-direction: column;
-
-
+  &__left {
+    @include width(70%);
+    // width: 70%;
+    @include flex(column);
+    // display:flex;
+    // flex-direction: column;
   }
-  &__slogan{
-  text-align: left;
-  font-size: 3rem;
-  color: #335576;
-  }
-
-  &__copy{
-    font-size:1rem;
-    width:80%;
-    margin-bottom:30px;
+  &__slogan {
+    text-align: left;
+    @include font-size(3rem);
+    // font-size: 3rem;
+    color: $primary-text;
   }
 
-  &__image{
+  &__copy {
+    @include font-size();
+    // font-size: 1rem;
+    @include width(80%);
+    // width:80%;
+    @include margin-bottom();
+    // margin-bottom:2rem;
+  }
+
+  &__image {
     // height:80%;
-    width: 100%;
+    @include width();
+    // width: 100%;
   }
 
-
-  &__right{
-    display: flex;
-    justify-content: flex-end;
-    width:40%;
+  &__right {
+    @include flex(row, flex-end);
+    // display: flex;
+    // justify-content: flex-end;
+    @include width(40%);
+    // width:40%;
   }
 }
-
-
 
 //RECOMMENDATIONS SECTION
 // recommendations title #335576
 //recommendations 3 itinirary cards
-  // destination name bottom right corner of the card
-  // border radius 5px
-  // border: 1px solid rgba(0,0,0,0.2) aka black with opacity of 20%
-  // box-shadow: 0px 4px 4px rgba(0,0,0,02)
+// destination name bottom right corner of the card
+// border radius 5px
+// border: 1px solid rgba(0,0,0,0.2) aka black with opacity of 20%
+// box-shadow: 0px 4px 4px rgba(0,0,0,02)
 
-.destinations{
-  padding:7%;
+.destinations {
+  padding: 7%;
 }
 
-.destinations__wrapper{
-  display:flex;
-  justify-content: center;
-
+.destinations__wrapper {
+  @include flex();
+  // display:flex;
+  // justify-content: center;
 }
-.destinations-card{
-    margin: 30px;
-    overflow: hidden;
-    position: relative;
+.destinations-card {
+  @include card();
+  margin: 2rem;
+  overflow: hidden;
+  position: relative;
 
-  &__image{
-    height:100%;
+  &__image {
+    height: 100%;
     width: 100%;
   }
 
-  &__title{
-    color:#ffffff;
-    font-size: 2rem;
+  &__title {
+    color: $neutral-light;
+    font-size: 1.5rem;
     position: absolute;
     bottom: 3%;
     right: 5%;
   }
-
 }

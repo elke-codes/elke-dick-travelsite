@@ -1,35 +1,41 @@
 // GLOBAL SCSS
-
+@use "./colors.scss" as *;
+@use "./mixins" as *;
 // set border-box value on all elements, including ::after and ::before (not included in * selector), box-sizing is not an inherited value
-*{
+* {
   box-sizing: border-box;
 }
 
-  body {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    margin:0;
-    padding: 0;
-    margin-top:80px;
-    color:#335576;
-  }
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  @include margin-reset();
+  // margin:0;
+  padding: 0;
+  margin-top: 5rem;
+  color: $primary-text;
+}
 
-  h1, h2, h3, h4 {
-  margin: 0;
-  }
+h1,
+h2,
+h3,
+h4 {
+  @include margin-reset();
+  // margin: 0;
+}
 
-  ul{
-    margin:0;
-  }
+ul {
+  @include margin-reset();
+  // margin:0;
+}
 
-  li {
-    list-style: none;
-  }
+li {
+  list-style: none;
+}
 
-  a {
-    text-decoration: none;
-    color:#335576;
-  }
-
+a {
+  text-decoration: none;
+  color: $neutral-dark;
+}
 
 /* NAVIGATION BAR  */
 /* 
@@ -39,148 +45,147 @@
 -current active page underline #DB7A4E 
 */
 
-
-.header{
+.header {
   position: fixed;
-  top:0;
-  z-index:1;
+  top: 0;
+  z-index: 1;
   padding: 2% 7% 2% 7%;
-  background-color: #ffffff;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
+  background-color: $neutral-light;
+  @include width();
+  // width: 100%;
+  @include flex(row, space-between);
+  // display: flex;
+  // justify-content: space-between;
+  @include align-items(baseline);
+  // align-items: baseline;
 
-
-  // &__title{
-  //   color:#335576;
-  //   font-weight: bold;
-  //   font-size: 1.5rem;
- 
-  // }
-  &__title-link{
-    color:#335576;
+  &__title {
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+  &__title-link {
+    color: $primary-text;
     font-weight: bold;
-    font-size: 1.5rem;
+    @include font-size(1.5rem);
+    // font-size: 1.5rem;
   }
-
-  &__menu{
+  &__menu {
     display: flex;
-
-  }
-  
-  &__menu-item{
-    height:fit-content;
-    margin-left:20px;
-    padding-bottom: 10px;
-    &:hover{
-      border-bottom: 3px solid #335576;
-    
- 
-  }
-}
-  &__menu-item--current{
-    border-bottom: 3px solid #DB7A4E;
   }
 
-  &__menu-item--highlight a{
-    color:#DB7A4E;
+  &__menu-item {
+    height: fit-content;
+    margin-left: 1.25rem;
+    padding-bottom: 0.625rem;
+    &:hover {
+      border-bottom: 3px solid $primary-text;
+    }
+  }
+  &__menu-item--current {
+    border-bottom: 3px solid $action-color;
+  }
+
+  &__menu-item--highlight a {
+    color: $action-color;
   }
 }
 
-.button{
-  background-color:#DB7A4E;
-  width:fit-content;
-  color:#ffffff;
-  border-radius: 20px;
-  padding:10px 30px;
-  &:hover{
-  transform: scale(1.2);
-  box-shadow: 0px 1px 1px rgba(0,0,0,01);
-}
-& > p{
-  padding:0;
-}
-}
-
-.card{
-  border:1px solid rgba(0,0,0,0.2);
-  border-radius: 5px;
-  box-shadow: 0px 4px 4px rgba(0,0,0,02);
-  width:20vw;
-  height:32vw;
-
- 
-  &:hover{
-    opacity: 0.75;
-    box-shadow: 7px 7px 7px rgba(0,0,0,02);
+.button {
+  background-color: $action-color;
+  width: fit-content;
+  color: $neutral-light;
+  @include border-radius(1.25rem);
+  // border-radius: 1.25rem;
+  padding: 0.625rem 1.875rem;
+  &:hover {
     transform: scale(1.2);
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 01);
+  }
+  & > p {
+    padding: 0;
   }
 }
 
+// .card{
+//   border:1px solid rgba(0,0,0,0.2);
+//   border-radius: 5px;
+//   box-shadow: 0px 4px 4px rgba(0,0,0,02);
+//   width:20vw;
+//   height:32vw;
 
-/* FOOTER */
-
-.footer{
-  background-color:#FEFAF5;
-  color:#335576;
-  display:flex;
-  justify-content: center;
-
-  &__wrapper{
-    display: flex;
-    width: 70%;
-    justify-content: space-between;
-}
-&__title{
-  margin-bottom:0;
-}
-&__icon{
-  height:30px;
-  width:30px;
-  }
-  }
-
-//   &__subtitle{
-//     color:#DB7A4E;
+//   &:hover{
+//     opacity: 0.75;
+//     box-shadow: 7px 7px 7px rgba(0,0,0,02);
+//     transform: scale(1.2);
 //   }
 // }
 
-.hours{
-  width:30vw;
-
-
-  &__wrapper{
-  display:flex;
- justify-content: space-between;
- }
-
-//  &__title{
-//    margin-bottom:0;
-//  }
-}
-
-
-.social{
-  display:flex;
-    flex-direction: column;
-  // &__icon{
-  // height:30px;
-  // width:30px;
-  // }
-
-  // &__wrapper{
-  
-  // }
-}
+/* FOOTER */
 /*
 background-color: #FEFAF5;
 footer titles and text: #335576;
 subtitles: #DB7A4E
 */
 
+.footer {
+  background-color: $background-color;
+  color: $primary-text;
+  padding: 3rem 0;
+  @include flex();
+  // display:flex;
+  // justify-content: center;
 
+  &__wrapper {
+    @include flex(row, space-between);
+    // display: flex;
+    // justify-content: space-between;
+    @include width(70%);
+    // width: 70%;
+  }
+  &__title {
+    @include margin-bottom(0);
+    // margin-bottom:0;
+    @include font-size(1.5rem);
+    // font-size: 1.5rem;
+  }
+  &__icon {
+    height: 2.125rem;
+    width: auto;
+    margin-right: 2rem;
+  }
 
+  &__link {
+    color: $primary-text;
+  }
+  &__subtitle {
+    color: $action-color;
+    @include font-size(0.75rem);
+    // font-size: 1rem;
+  }
+  &__copy {
+    @include margin-reset();
+    @include font-size() // margin:0;
+;
+  }
+}
+
+.hours {
+  width: 30vw;
+
+  &__wrapper {
+    @include flex(row, space-between);
+    //   display:flex;
+    //  justify-content: space-between;
+  }
+}
+
+.social {
+  @include flex(column, space-between);
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: space-between;
+}
 
 //seperate card class or use mixin and apply style to both card classes?
 // or class modifier?
@@ -190,7 +195,6 @@ subtitles: #DB7A4E
 // //this goes in destinations scss
 // // option: extends card
 // .destinations-card{
-
 
 //   &__link{
 
@@ -207,7 +211,6 @@ subtitles: #DB7A4E
 
 // //this goes in main scss
 // .itinirary-card{
-
 
 //   &__title{
 
