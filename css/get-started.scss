@@ -1,0 +1,54 @@
+@use "./partials/_global";
+
+// form example code from MDN https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form
+.form {
+  
+  &__name{
+  display: table;
+}
+  &__email{
+    display: table-row;
+  }
+}
+
+
+label, input {
+  display: table-cell;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+
+.get-started{
+  display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &__title{
+      align-self: flex-start;
+    }
+}
+
+.wrapper{
+  // display: flex;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  box-shadow: 0px 2px 2px #335576;
+  background-color: rgba(255, 255, 255, 0.75);
+  // justify-content: space-around;
+  padding: 7%;
+  margin:5%;
+  width: 70%;
+
+  &__top{
+    display: flex;
+    justify-content: space-around;
+  }
+
+  &__bottom{
+    margin-top: 2rem;
+    display:flex;
+    justify-content: center;
+  }
+}
+

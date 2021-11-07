@@ -14,6 +14,7 @@
   <!-- StyleSheets -->
   <link rel="stylesheet" href="../css/main.css">
   <link rel="stylesheet" href="../css/destinations.css">
+  <link rel="stylesheet" href="../css/get-started.css">
 </head>
 
 <body>
@@ -29,6 +30,7 @@
     <!-- unordered list menu items -->
     <ul class="header__menu">
       <!-- link/text: Home current active page-->
+
       <li class="header__menu-item "><a href="../index.html">Home</a></li>
       <!-- link/text: Hawaii -current active page -->
       <li class="header__menu-item"><a href="./hawaii.html">Hawaii</a></li>
@@ -36,36 +38,53 @@
       <li class="header__menu-item"><a href="./iceland.html">Iceland</a></li>
       <!-- link/text: Greece -->
       <li class="header__menu-item"><a href="./greece.html">Greece</a></li>
+      <li class="header__menu-item header__menu-item--current header__menu-item--highlight"><a
+          href="./get-started.html">Get
+          Started</a></li>
     </ul>
   </header>
 
-  <!-- ITINERARY HAWAII -->
+  <!-- GET STARTED -->
 
-  <section class="itinirary itinirary--hawaii">
+  <section class="get-started itinirary itinirary--hawaii">
 
 
     <!-- title of the page-->
-    <h2 class="itinirary__title">Get Started!</h2>
+    <h2 class="itinirary__title get-started__title">Get Started!</h2>
 
-    <!-- tag itinerary cards (article/section?) -->
-    <div class="itinirary__wrapper">
+    <section class="wrapper">
 
-      <!-- form -->
-      <form action="" method="get" class="form-example">
-        <div class="form-example">
-          <label for="name">Enter your name: </label>
-          <input type="text" name="name" id="name" required>
-        </div>
-        <div class="form-example">
-          <label for="email">Enter your email: </label>
-          <input type="email" name="email" id="email" required>
-        </div>
-        <div class="form-example">
-          <input type="submit" value="Subscribe!">
-        </div>
-      </form>
+      <div class="wrapper__top">
+        <article>
+          <!-- base code copied from https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select -->
+          <label for="destination-select">Choose your destination:</label>
+          <select name="destination" id="destination-select">
+            <option value="">--Please choose an option--</option>
+            <option value="hawaii">Hawaii</option>
+            <option value="iceland">Iceland</option>
+            <option value="greece">Greece</option>
+          </select>
+        </article>
+        <!-- form -->
+        <!-- base code copied from https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form -->
+        <form action="" method="get" class="form">
+          <div class="form__name">
+            <label for="name">Enter your name: </label>
+            <input type="text" name="name" id="name" required>
+          </div>
+          <div class="form__email">
+            <label for="email">Enter your email: </label>
+            <input type="email" name="email" id="email" required>
+          </div>
+        </form>
+      </div>
 
-    </div>
+      <div class="wrapper__bottom">
+        <p class="button">Request info!</p>
+      </div>
+    </section>
+
+
 
 
   </section>
@@ -75,70 +94,67 @@
 
   <!-- footer -->
   <footer class="footer">
-    <!-- contact block -->
-    <div class="contact">
-      <!-- title Contact -->
-      <h4 class="contact__title">Contact</h4>
-      <!-- subtitle contact EMAIL -->
-      <h5 class="contact__subtitle">EMAIL</h5>
-      <!-- link/text contact: email -->
-      <a href="mailto:info@travelsite.com" class="contact__email">info@travelsite.com</a>
-    </div>
-
-    <!-- hours block -->
-    <div class="hours">
-      <!-- tittle Hours -->
-      <h4 class="hours__title">Hours</h4>
-      <!-- wrapper -->
-      <div class="hours__wrapper">
-
-        <div class="hours__week">
-          <!-- subtitle Hours MONDAY-FRIDAY -->
-          <h5 class="hours__subtitle">MONDAY - FRIDAY</h5>
-          <!-- text hours: 9:00 AM -5:00 PM -->
-          <p class="hours__copy">9:00 AM - 5:00 PM</p>
-        </div>
-        <div class="hours__saturday">
-
-          <!-- subtitle hours SATURDAY -->
-          <h5 class="hours__subtitle">SATURDAY</h5>
-          <!-- text hours : 10:00 AM -4:00 PM -->
-          <p class="hours__copy">9:00 AM - 5:00 PM</p>
-        </div>
-        <div class="hours__sunday">
-
-          <!-- subtitle hours SUNDAY -->
-          <h5 class="hours__subtitle">SUNDAY</h5>
-          <!-- text hours: Closed -->
-          <p class="hours__copy">Closed</p>
+    <div class="footer__wrapper">
+      <!-- contact block -->
+      <div class="contact">
+        <!-- title Contact -->
+        <h4 class="contact__title">Contact</h4>
+        <!-- subtitle contact EMAIL -->
+        <h5 class="contact__subtitle">EMAIL</h5>
+        <!-- link/text contact: email -->
+        <a href="mailto:info@travelsite.com" class="contact__email">info@travelsite.com</a>
+      </div>
+      <!-- hours block -->
+      <div class="hours">
+        <!-- tittle Hours -->
+        <h4 class="hours__title">Hours</h4>
+        <!-- wrapper -->
+        <div class="hours__wrapper">
+          <div class="hours__week">
+            <!-- subtitle Hours MONDAY-FRIDAY -->
+            <h5 class="hours__subtitle">MONDAY - FRIDAY</h5>
+            <!-- text hours: 9:00 AM -5:00 PM -->
+            <p class="hours__copy">9:00 AM - 5:00 PM</p>
+          </div>
+          <div class="hours__saturday">
+            <!-- subtitle hours SATURDAY -->
+            <h5 class="hours__subtitle">SATURDAY</h5>
+            <!-- text hours : 10:00 AM -4:00 PM -->
+            <p class="hours__copy">9:00 AM - 5:00 PM</p>
+          </div>
+          <div class="hours__sunday">
+            <!-- subtitle hours SUNDAY -->
+            <h5 class="hours__subtitle">SUNDAY</h5>
+            <!-- text hours: Closed -->
+            <p class="hours__copy">Closed</p>
+          </div>
         </div>
       </div>
-
-    </div>
-
-    <!-- social block -->
-    <div class="social">
-      <!-- title social Social -->
-      <h4 class="social__title">Social</h4>
-      <!-- link social instagram -->
-      <a href="http://www.instagram.com" class="social__link">
-        <!-- icon social instagram -->
-        <img src="/assets/Icons/icon-instagram.png" alt="Instagram Logo" class="social__icon">
-      </a>
-      <!-- link social facebook -->
-      <a href="http://www.facebook.com" class="social__link">
-        <!-- icon social facebook -->
-        <img src="/assets/Icons/icon-facebook.png" alt="Facebook Logo" class="social__icon">
-      </a>
-      <!-- link social twitter -->
-      <a href="http://www.twitter.com" class="social__link">
-        <!-- icon social twitter -->
-        <img src="/assets/Icons/icon-twitter.png" alt="" class="social__icon">
-      </a>
+      <!-- social block -->
+      <div class="social">
+        <!-- title social Social -->
+        <h4 class="social__title">Social</h4>
+        <!-- link social instagram -->
+        <div class="social__wrapper">
+          <a href="http://www.instagram.com" class="social__link">
+            <!-- icon social instagram -->
+            <img src="/assets/Icons/icon-instagram.png" alt="Instagram Logo" class="social__icon">
+          </a>
+          <!-- link social facebook -->
+          <a href="http://www.facebook.com" class="social__link">
+            <!-- icon social facebook -->
+            <img src="/assets/Icons/icon-facebook.png" alt="Facebook Logo" class="social__icon">
+          </a>
+          <!-- link social twitter -->
+          <a href="http://www.twitter.com" class="social__link">
+            <!-- icon social twitter -->
+            <img src="/assets/Icons/icon-twitter.png" alt="" class="social__icon">
+          </a>
+        </div>
+      </div>
     </div>
 
   </footer>
-
 
 </body>
 

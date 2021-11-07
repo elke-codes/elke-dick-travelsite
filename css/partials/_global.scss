@@ -74,15 +74,34 @@
     margin-left:20px;
     padding-bottom: 10px;
     &:hover{
-      border-bottom: 3px solid #DB7A4E;
-    }
+      border-bottom: 3px solid #335576;
+    
  
   }
-  &__menu-item--active{
+}
+  &__menu-item--current{
     border-bottom: 3px solid #DB7A4E;
+  }
+
+  &__menu-item--highlight a{
+    color:#DB7A4E;
   }
 }
 
+.button{
+  background-color:#DB7A4E;
+  width:fit-content;
+  color:#ffffff;
+  border-radius: 20px;
+  padding:10px 30px;
+  &:hover{
+  transform: scale(1.2);
+  box-shadow: 0px 1px 1px rgba(0,0,0,01);
+}
+& > p{
+  padding:0;
+}
+}
 
 .card{
   border:1px solid rgba(0,0,0,0.2);
