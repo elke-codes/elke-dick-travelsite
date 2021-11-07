@@ -3,64 +3,26 @@
 @use "./partials/_global.scss" as *;
 @use "./partials/_colors.scss" as *;
 @use "./partials/_mixins.scss" as *;
+@use "./partials/_variables.scss" as *;
 
 //ITINIRARY
 .itinirary {
   @include main-section();
-  // padding: 7%;
 
-  // &__wrapper{
-  //   @include flex();
-  // // display:flex;
-  // // justify-content: center;
-  // }
-
-  // &__title{
-  //   @include margin-reset();
-  //   // margin:0;
-  //   color: $neutral-light;
-  //   font-size:4rem;
-  // }
 
   &--hawaii {
     @extend .itinirary;
     @include section-background(url("../assets/Images/hawaii.jpg"));
-    // background-image:url("../assets/Images/hawaii.jpg");
-    // background-size: cover;
-    // background-position: center;
   }
   &--iceland {
     @extend .itinirary;
     @include section-background(url("../assets/Images/iceland.jpg"));
-    // background-image:url("../assets/Images/iceland.jpg");
-    // background-size: cover;
-    // background-position: center;
   }
   &--greece {
     @extend .itinirary;
     @include section-background(url("../assets/Images/greece.jpg"));
-    // background-image:url("../assets/Images/greece.jpg");
-    // background-size: cover;
-    // background-position: center;
   }
 }
-
-//check how to nest modifier
-// .itinirary--hawaii{
-//   background-image:url("../assets/Images/hawaii.jpg");
-//   background-size: cover;
-//   background-position: center;
-// }
-// .itinirary--iceland{
-//   background-image:url("../assets/Images/iceland.jpg");
-//   background-size: cover;
-//   background-position: center;
-// }
-// .itinirary--greece{
-//   background-image:url("../assets/Images/greece.jpg");
-//   background-size: cover;
-//   background-position: center;
-// }
 
 .itinirary-card {
   @include card();
@@ -70,14 +32,15 @@
   text-align: center;
   padding: 1rem;
   @include flex(column, flex-start);
-  // display: flex;
-  // flex-direction: column;
   color: $neutral-dark;
+  @include mobile{
+    width: 60vw;
+    height: auto;
+  }
 
   &__title {
     border-bottom: 2px solid $neutral-dark;
   }
-
   &__copy {
     padding: 1rem;
     background-color: $background-color;

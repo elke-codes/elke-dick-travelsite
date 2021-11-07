@@ -1,8 +1,9 @@
-// HOME PAGE SCSS
+// HOME PAGE SCSS //
 
 @use "./partials/_global.scss" as *;
 @use "./partials/_colors.scss" as *;
 @use "./partials/_mixins.scss" as *;
+@use "./partials/_variables.scss" as *;
 
 //HERO
 // hero background: #FEFAF5;
@@ -10,45 +11,41 @@
   padding: 7%;
   background-color: $background-color;
   @include flex();
-  // display: flex;
   @include align-items();
-  // align-items: center;
+  @include tablet{
+    padding: 10%;
+
+  }
+
 
   &__left {
     @include width(70%);
-    // width: 70%;
     @include flex(column);
-    // display:flex;
-    // flex-direction: column;
   }
   &__slogan {
     text-align: left;
     @include font-size(3rem);
-    // font-size: 3rem;
     color: $primary-text;
+    @include tablet{
+      @include font-size(2rem); 
+    }
   }
-
   &__copy {
     @include font-size();
-    // font-size: 1rem;
     @include width(80%);
-    // width:80%;
     @include margin-bottom();
-    // margin-bottom:2rem;
+    @include tablet{
+      @include font-size(0.75rem);
+      line-height: 1.5;
+    }
   }
-
   &__image {
-    // height:80%;
     @include width();
-    // width: 100%;
   }
 
   &__right {
     @include flex(row, flex-end);
-    // display: flex;
-    // justify-content: flex-end;
     @include width(40%);
-    // width:40%;
   }
 }
 
@@ -66,8 +63,6 @@
 
 .destinations__wrapper {
   @include flex();
-  // display:flex;
-  // justify-content: center;
 }
 .destinations-card {
   @include card();

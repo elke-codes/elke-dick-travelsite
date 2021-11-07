@@ -1,10 +1,12 @@
-// GET STARTED
+// GET STARTED //
 
 @use "./partials/_global.scss" as *;
 @use "./partials/_colors.scss" as *;
 @use "./partials/_mixins.scss" as *;
+@use "./partials/_variables.scss" as *;
 
-// form example code from MDN https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form
+// FORM //
+// adjusted form example code from MDN https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form
 .form {
   margin-left: 2rem;
   &__name {
@@ -19,49 +21,57 @@ label,
 input {
   display: table-cell;
   @include margin-bottom();
-  // margin-bottom: 2rem;
   @include border-radius();
-  // border-radius: 5px;
 }
 
 label {
   @include margin-bottom();
-  // margin-bottom:2rem;
+  @include tablet{
+    @include flex(column, space-around);
+    align-items: center;
+  }
 }
+//form example code end
 
+// MAIN SECTION //
 .get-started {
   @include main-section();
   @include flex(column);
-  // display: flex;
-  // flex-direction: column;
-  // justify-content: center;
   @include align-items();
-  // align-items: center;
+
+
   &__title {
     align-self: flex-start;
+    &::before {
+      position: relative;
+    content: "✈️";
+    @include font-size (3rem);
+    top: -30px;
+    left: 160px;
+    @include tablet{
+      text-shadow: 1px 1px 2px $neutral-light;
+        position: relative;
+        content: "✈️";
+        @include font-size (3rem);
+        top: 7px;
+        left: 598px;
+    }
+  }  
   }
   &--bg {
     @extend .get-started;
     @include section-background(url("../assets/Images/hawaii-flipped.jpg"));
-    // background-image:url("../assets/Images/hawaii.jpg");
-    // background-size: cover;
-    // background-position: center;
   }
 }
 
 .booking {
-  // display: flex;
   border: 1px solid rgba(0, 0, 0, 0.2);
   box-shadow: 0px 2px 2px $primary-text;
   background-color: rgba(255, 255, 255, 0.75);
-  // justify-content: space-around;
   padding: 7%;
   margin: 5%;
   @include width(70%);
-  // width: 70%;
   @include flex(column);
-  // display: flex;
-  // flex-direction: column;
   align-items: center;
 
   &__copy {
@@ -69,24 +79,11 @@ label {
   }
   &__title {
     @include flex(row, space-around);
-    // display: flex;
-    // justify-content: space-around;
     @include margin-bottom();
     @include font-size(1.5rem);
-    // font-size: 1.5rem;
-    &::after {
-      position: relative;
-      content: "💫";
-      font-size: 2rem;
-      top: -10px;
-      left: -20px;
-    }
   }
-
   &__bottom {
     @include flex();
-    // display:flex;
-    // justify-content: center;
   }
   &__top {
     @include flex();

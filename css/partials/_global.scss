@@ -1,7 +1,8 @@
-// GLOBAL SCSS
+// GLOBAL SCSS //
 @use "./colors.scss" as *;
 @use "./mixins" as *;
-// set border-box value on all elements, including ::after and ::before (not included in * selector), box-sizing is not an inherited value
+
+// set border-box value on all elements
 * {
   box-sizing: border-box;
 }
@@ -9,7 +10,6 @@
 body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   @include margin-reset();
-  // margin:0;
   padding: 0;
   margin-top: 5rem;
   color: $primary-text;
@@ -20,12 +20,10 @@ h2,
 h3,
 h4 {
   @include margin-reset();
-  // margin: 0;
 }
 
 ul {
   @include margin-reset();
-  // margin:0;
 }
 
 li {
@@ -37,14 +35,18 @@ a {
   color: $neutral-dark;
 }
 
-/* NAVIGATION BAR  */
+// NAVIGATION BAR //
 /* 
 -fixed on top of page
 -bg color: #ffffff
 -logo:#335576
 -current active page underline #DB7A4E 
 */
-
+#home-link{
+  @include mobile{
+    display: none;
+  }
+}
 .header {
   position: fixed;
   top: 0;
@@ -52,12 +54,11 @@ a {
   padding: 2% 7% 2% 7%;
   background-color: $neutral-light;
   @include width();
-  // width: 100%;
   @include flex(row, space-between);
-  // display: flex;
-  // justify-content: space-between;
   @include align-items(baseline);
-  // align-items: baseline;
+  @include mobile{
+    padding: 2rem;
+  }
 
   &__title {
     &:hover {
@@ -66,14 +67,17 @@ a {
   }
   &__title-link {
     color: $primary-text;
-    font-weight: bold;
     @include font-size(1.5rem);
-    // font-size: 1.5rem;
+    @include mobile{
+    font-size: 0.75rem;
+    }
   }
   &__menu {
     display: flex;
+    @include mobile{
+      // padding: 0 1rem;
+    }
   }
-
   &__menu-item {
     height: fit-content;
     margin-left: 1.25rem;
@@ -81,11 +85,15 @@ a {
     &:hover {
       border-bottom: 3px solid $primary-text;
     }
+    @include mobile{
+      font-size: 0.75rem;
+      margin-left:0.75rem;
+    }
+
   }
   &__menu-item--current {
     border-bottom: 3px solid $action-color;
   }
-
   &__menu-item--highlight a {
     color: $action-color;
   }
@@ -107,21 +115,7 @@ a {
   }
 }
 
-// .card{
-//   border:1px solid rgba(0,0,0,0.2);
-//   border-radius: 5px;
-//   box-shadow: 0px 4px 4px rgba(0,0,0,02);
-//   width:20vw;
-//   height:32vw;
-
-//   &:hover{
-//     opacity: 0.75;
-//     box-shadow: 7px 7px 7px rgba(0,0,0,02);
-//     transform: scale(1.2);
-//   }
-// }
-
-/* FOOTER */
+// FOOTER //
 /*
 background-color: #FEFAF5;
 footer titles and text: #335576;
@@ -133,90 +127,106 @@ subtitles: #DB7A4E
   color: $primary-text;
   padding: 3rem 0;
   @include flex();
-  // display:flex;
-  // justify-content: center;
+  @include tablet{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+  
+  }
+  @include mobile{
+    padding: 0;
+  }
 
   &__wrapper {
     @include flex(row, space-between);
-    // display: flex;
-    // justify-content: space-between;
-    @include width(70%);
-    // width: 70%;
+    @include width(75%);
+    @include mobile{
+      flex-direction: column;
+    }
   }
   &__title {
     @include margin-bottom(0);
-    // margin-bottom:0;
     @include font-size(1.5rem);
-    // font-size: 1.5rem;
+    @include tablet{
+      @include font-size();
+    }
+    @include mobile{
+      display: none;
+    }
   }
   &__icon {
     height: 2.125rem;
     width: auto;
     margin-right: 2rem;
-  }
+    @include tablet{
+      height: 1.6rem;
+      width: auto;
+      margin-right:0.75rem;
+      margin-top: 1rem;
+    }
+    @include mobile{
+      // height: 0.8rem;
+      height: 24px;
+      width:auto;
+      margin: 0 1rem;
 
-  &__link {
-    color: $primary-text;
+    }
   }
   &__subtitle {
     color: $action-color;
     @include font-size(0.75rem);
-    // font-size: 1rem;
+    @include tablet{
+      @include font-size(0.55rem);
+    }
+    @include mobile{
+      @include font-size(0.45rem);
+      margin-bottom: 1rem;
+      visibility: hidden;
+    }
   }
-  &__copy {
+  &__info {
     @include margin-reset();
-    @include font-size() // margin:0;
-;
+    @include font-size();
+    color: $primary-text;
+    @include font-size(0.75rem);
+
+  }
+ 
+}
+.contact{
+  @include mobile{
+    margin-bottom: 0.3rem;
   }
 }
 
 .hours {
   width: 30vw;
+  @include tablet{
+    width: 25vw;
+  }
+  @include mobile{
+    margin-bottom: 0.3rem;
+    width:20vw;
+    display: none;
+      }
 
   &__wrapper {
     @include flex(row, space-between);
-    //   display:flex;
-    //  justify-content: space-between;
   }
-}
+} 
 
 .social {
   @include flex(column, space-between);
-  // display: flex;
-  // flex-direction: column;
-  // justify-content: space-between;
+  @include tablet {
+    justify-content: flex-start;
+  }
+  @include mobile{
+    margin-bottom: 0.3rem;
+    align-items: flex-end;
+    position: relative;
+    bottom: 30px;
+    left: 20px;
+
+  }
 }
-
-//seperate card class or use mixin and apply style to both card classes?
-// or class modifier?
-//.card in global
-// .card{}
-
-// //this goes in destinations scss
-// // option: extends card
-// .destinations-card{
-
-//   &__link{
-
-//   }
-
-//   &__image{
-
-//   }
-
-//   &__title{
-
-//   }
-// }
-
-// //this goes in main scss
-// .itinirary-card{
-
-//   &__title{
-
-//   }
-
-//   &__copy{
-
-//   }
-// }
