@@ -79,21 +79,24 @@
 
 // MEDIA QUERIES //
 
-//code smippet from class
-@mixin mobile {
-  @media screen and (max-width: $mobile-breakpoint) {
-    @content;
-  }
-}
+// //code snippet from class
+// @mixin desktop {
+//   @media screen and (min-width: $desktop-breakpoint) {
+//     @content;
+//   }
+// }
 
-@mixin tablet {
-  @media screen and (min-width: $tablet-breakpoint) {
-    @content;
-  }
-}
+// //set as max width to have desktop styling still apply??
+// @mixin tablet {
+//   @media screen and (max-width: $tablet-breakpoint) {
+//     @content;
+//   }
+// }
 
-@mixin desktop {
-  @media screen and (min-width: $desktop-breakpoint) {
-    @content;
-  }
-}
+// @mixin mobile {
+//   @media screen and (max-width: $mobile-breakpoint) {
+//     @content;
+//   }
+// }
+
+

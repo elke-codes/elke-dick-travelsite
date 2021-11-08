@@ -12,32 +12,34 @@
   background-color: $background-color;
   @include flex();
   @include align-items();
-  @include tablet{
-    padding: 10%;
+  // @include tablet{
+  //   padding: 10%;
 
-  }
+  // }
 
 
   &__left {
     @include width(70%);
     @include flex(column);
   }
+ 
   &__slogan {
     text-align: left;
-    @include font-size(3rem);
+    @include font-size(2.5rem);
     color: $primary-text;
-    @include tablet{
-      @include font-size(2rem); 
-    }
+    // @include tablet{
+    //   @include font-size(2rem); 
+    // }
   }
   &__copy {
     @include font-size();
     @include width(80%);
     @include margin-bottom();
-    @include tablet{
-      @include font-size(0.75rem);
-      line-height: 1.5;
-    }
+    // @include tablet{
+    //   // @include font-size(0.75rem);
+    //   line-height: 1.5;
+    // }
+   
   }
   &__image {
     @include width();
