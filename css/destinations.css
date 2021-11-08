@@ -273,6 +273,11 @@ subtitles: #DB7A4E
     align-items: center;
   }
 }
+.itinirary__title {
+  margin: 0;
+  color: #ffffff;
+  font-size: 4rem;
+}
 .itinirary--hawaii {
   background-image: url("../assets/Images/hawaii.jpg");
   background-size: cover;

@@ -333,6 +333,11 @@ label {
     align-items: center;
   }
 }
+.get-started__title {
+  margin: 0;
+  color: #ffffff;
+  font-size: 4rem;
+}
 @media screen and (max-width: 480px) {
   .get-started, .get-started--bg {
     align-items: center;
