@@ -2,7 +2,6 @@
 @use "./colors" as *;
 @use "./variables" as *;
 
-
 @mixin flex($flex-direction: row, $justify-content: center) {
   display: flex;
   flex-direction: $flex-direction;
@@ -31,19 +30,19 @@
 
   &__wrapper {
     @include flex();
-    // @include mobile{
-    //   display: flex;
-    //   flex-direction: column;
-    //   align-items: center;
-    // }
   }
-
-  &__title {
-    @include margin-reset();
-    color: $neutral-light;
-    @include font-size(4rem);
+  @include mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }
+
+// &__title {
+//   @include margin-reset();
+//   color: $neutral-light;
+//   @include font-size(4rem);
+// }
 
 @mixin section-background($background-image) {
   background-image: $background-image;
@@ -63,9 +62,11 @@
     box-shadow: 7px 7px 7px rgba(0, 0, 0, 02);
     transform: scale(1.2);
   }
-  // @include mobile{
-  //   width: 50vw;
-  // }
+
+  @include mobile {
+    width: 60vw;
+    height: auto;
+  }
 }
 
 @mixin border-radius($border-radius: 5px) {
@@ -76,27 +77,24 @@
   font-size: $font-size;
 }
 
-
 // MEDIA QUERIES //
 
 // //code snippet from class
-// @mixin desktop {
-//   @media screen and (min-width: $desktop-breakpoint) {
-//     @content;
-//   }
-// }
+@mixin desktop {
+  @media screen and (min-width: $desktop-breakpoint) {
+    @content;
+  }
+}
 
-// //set as max width to have desktop styling still apply??
-// @mixin tablet {
-//   @media screen and (max-width: $tablet-breakpoint) {
-//     @content;
-//   }
-// }
+//set as max width to have desktop styling still apply??
+@mixin tablet {
+  @media screen and (max-width: $tablet-breakpoint) {
+    @content;
+  }
+}
 
-// @mixin mobile {
-//   @media screen and (max-width: $mobile-breakpoint) {
-//     @content;
-//   }
-// }
-
-
+@mixin mobile {
+  @media screen and (max-width: $mobile-breakpoint) {
+    @content;
+  }
+}

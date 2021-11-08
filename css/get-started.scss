@@ -15,6 +15,19 @@
   &__email {
     display: table-row;
   }
+  @include mobile {
+    margin: 0;
+    font-size: 0.75rem;
+    display: flex;
+    flex-direction: column;
+  }
+  &__name,
+  &__email {
+    @include mobile {
+      display: flex;
+      flex-direction: column;
+    }
+  }
 }
 
 label,
@@ -22,14 +35,22 @@ input {
   display: table-cell;
   @include margin-bottom();
   @include border-radius();
+  @include mobile {
+    display: flex;
+  }
 }
 
 label {
   @include margin-bottom();
-  // @include tablet{
-  //   @include flex(column, space-around);
-  //   // align-items: center;
-  // }
+  margin-bottom: 1rem;
+  @include tablet {
+    @include flex(column, space-around);
+  }
+
+  @include mobile {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+  }
 }
 //form example code end
 
@@ -38,26 +59,34 @@ label {
   @include main-section();
   @include flex(column);
   @include align-items();
-
+  @include mobile {
+    align-items: center;
+  }
 
   &__title {
     align-self: flex-start;
+    @include mobile {
+      text-align: center;
+    }
     &::before {
       position: relative;
-    content: "✈️";
-    @include font-size (3rem);
-    top: -30px;
-    left: 160px;
-    // @include tablet{
-    //     position: relative;
-    //     content: "✈️";
-    //     @include font-size (3rem);
-    //     top: 7px;
-    //     left: 598px;
-    // }
-
-  }  
+      content: "✈️";
+      @include font-size(3rem);
+      top: -30px;
+      left: 160px;
+      @include tablet {
+        position: relative;
+        content: "✈️";
+        @include font-size(3rem);
+        top: 7px;
+        left: 500px;
+      }
+      @include mobile {
+        display: none;
+      }
+    }
   }
+
   &--bg {
     @extend .get-started;
     @include section-background(url("../assets/Images/hawaii-flipped.jpg"));
@@ -87,5 +116,9 @@ label {
   }
   &__top {
     @include flex();
+    @include mobile {
+      flex-direction: column;
+      align-items: center;
+    }
   }
 }

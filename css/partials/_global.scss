@@ -43,23 +43,23 @@ a {
 -logo:#335576
 -current active page underline #DB7A4E 
 */
-// #home-link{
-//   @include mobile{
-//     display: none;
-//   }
-// }
+#home-link{
+  @include mobile{
+    display: none;
+  }
+}
 .header {
   position: fixed;
   top: 0;
-  z-index: 1;
+  z-index: 8;
   padding: 2% 7% 2% 7%;
   background-color: $neutral-light;
   @include width();
   @include flex(row, space-between);
   @include align-items(baseline);
-  // @include mobile{
-  //   padding: 2rem;
-  // }
+  @include mobile{
+    padding: 2rem;
+  }
 
   &__title {
     &:hover {
@@ -69,15 +69,15 @@ a {
   &__title-link {
     color: $primary-text;
     @include font-size(1.5rem);
-    // @include mobile{
-    // font-size: 0.75rem;
-    // }
+    @include mobile{
+    font-size: 0.75rem;
+    }
   }
   &__menu {
     display: flex;
-    // @include mobile{
-    //   // padding: 0 1rem;
-    // }
+    @include mobile{
+      // padding: 0 1rem;
+    }
   }
   &__menu-item {
     height: fit-content;
@@ -86,10 +86,10 @@ a {
     &:hover {
       border-bottom: 3px solid $primary-text;
     }
-    // @include mobile{
-    //   font-size: 0.75rem;
-    //   margin-left:0.75rem;
-    // }
+    @include mobile{
+      font-size: 0.75rem;
+      margin-left:0.75rem;
+    }
   }
   &__menu-item--current {
     border-bottom: 3px solid $action-color;
@@ -127,86 +127,90 @@ subtitles: #DB7A4E
   color: $primary-text;
   padding: 3rem 0;
   @include flex();
-  // @include tablet{
-  //   display: flex;
-  //   flex-direction: row;
-  //   justify-content: space-around;
-  //   // width: 100%;
-  // }
-  // @include mobile{
-  //   padding: 0;
-  // }
+  @include tablet{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+  }
+  @include mobile{
+    padding: 0;
+  }
 
   &__wrapper {
     @include flex(row, space-between);
     @include width(75%);
-    // @include mobile{
-    //   flex-direction: column;
-    // }
+    @include mobile{
+      flex-direction: column;
+    }
   }
   &__title {
     @include margin-bottom(0);
     @include font-size(1.5rem);
-    // @include tablet{
-    //   @include font-size();
-    // }
-    // @include mobile{
-    //   display: none;
-    // }
+    @include tablet{
+      @include font-size();
+    }
+    @include mobile{
+      display: none;
+    }
   }
   &__icon {
     height: 2.125rem;
     width: auto;
     margin-right: 2rem;
-    // @include tablet{
-    //   height: 1.6rem;
-    //   width: auto;
-    //   // margin-right:0.75rem;
-    //   margin-top: 1rem;
-    // }
-    // @include mobile{
-    //   // height: 0.8rem;
-    //   height: 24px;
-    //   width:auto;
-    //   margin: 0 1rem;
-    // }
+    @include tablet{
+      height: 1.6rem;
+      width: auto;
+      // margin-right:0.75rem;
+      margin-top: 1rem;
+    }
+    @include mobile{
+      // height: 0.8rem;
+      height: 24px;
+      width:auto;
+      margin: 0 1rem;
+    }
   }
   &__subtitle {
     color: $action-color;
     @include font-size(0.75rem);
-    // @include tablet{
-    //   @include font-size(0.55rem);
-    // }
-    // @include mobile{
-    //   @include font-size(0.45rem);
-    //   margin-bottom: 1rem;
-    //   visibility: hidden;
-    // }
+    @include tablet{
+      @include font-size(0.55rem);
+      margin-right: 0.2rem;
+    }
+    @include mobile{
+      @include font-size(0.45rem);
+      margin-bottom: 1rem;
+      visibility: hidden;
+    }
   }
   &__info {
     @include margin-reset();
     @include font-size();
     color: $primary-text;
-  //   @include mobile{
-  //   @include font-size(0.75rem);
-  // }
+    @include tablet{
+    @include font-size(0.75rem);
+  }
   }
  }
 
 
-// .contact{
-//   @include mobile{
-//     margin-bottom: 0.3rem;
-//   }
-// }
+.contact{
+  @include mobile{
+    margin-bottom: 0.3rem;
+  }
+}
 
 .hours {
-  width: 30vw;
-  // @include mobile{
-  //   margin-bottom: 0.3rem;
-  //   width:20vw;
-  //   display: none;
-  // }
+  width: 35vw;
+  @include tablet{
+    margin-bottom: 0.3rem;
+    width:30vw;
+  }
+  @include mobile{
+   
+    display: none;
+  }
 
   &__wrapper {
     @include flex(row, space-between);
@@ -215,14 +219,14 @@ subtitles: #DB7A4E
 
 .social {
   @include flex(column, space-between);
-  // @include tablet {
-  //   justify-content: flex-start;
-  // }
-  // @include mobile{
-  //   margin-bottom: 0.3rem;
-  //   align-items: flex-end;
-  //   position: relative;
-  //   bottom: 30px;
-  //   left: 20px;
-  // }
+  @include tablet {
+    justify-content: flex-start;
+  }
+  @include mobile{
+    margin-bottom: 0.3rem;
+    align-items: flex-end;
+    position: relative;
+    bottom: 30px;
+    left: 20px;
+  }
 }

@@ -12,34 +12,57 @@
   background-color: $background-color;
   @include flex();
   @include align-items();
-  // @include tablet{
-  //   padding: 10%;
-
-  // }
-
+  @include tablet {
+    padding: 10%;
+  }
+  @include mobile {
+    display: block;
+    height: 500px;
+  }
 
   &__left {
     @include width(70%);
     @include flex(column);
+    @include mobile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+      margin: 0;
+      width: 100%;
+      padding-top: 15%;
+    }
   }
- 
+
   &__slogan {
     text-align: left;
     @include font-size(2.5rem);
     color: $primary-text;
-    // @include tablet{
-    //   @include font-size(2rem); 
-    // }
+    @include tablet {
+      @include font-size(2rem);
+    }
+    @include mobile {
+      text-align: center;
+      // font-size: 2.5rem;
+      // color: #335576;
+      width: 80%;
+    }
   }
   &__copy {
     @include font-size();
     @include width(80%);
     @include margin-bottom();
-    // @include tablet{
-    //   // @include font-size(0.75rem);
-    //   line-height: 1.5;
-    // }
-   
+    @include tablet {
+      // @include font-size(0.75rem);
+      line-height: 1.5;
+    }
+    @include mobile {
+      font-size: 1rem;
+      /* width: 80%; */
+      margin-bottom: 2rem;
+      text-align: center;
+    }
   }
   &__image {
     @include width();
@@ -48,9 +71,51 @@
   &__right {
     @include flex(row, flex-end);
     @include width(40%);
+    @include mobile {
+      position: relative;
+      bottom: 12rem;
+      opacity: 0.5;
+      width: 100%;
+    }
   }
 }
 
+// r-     /* display: flex; */
+// /* width: 100%; */
+// /* margin-top: 2rem; */
+
+// .hero__copy {
+//   font-size: 1rem;
+//   /* width: 80%; */
+//   margin-bottom: 2rem;
+//   text-align: center;
+
+//   @media screen and (max-width: 768px)
+// .hero__slogan {
+//     font-size: 1.5rem;
+// }
+
+// .hero__slogan {
+//     text-align: center;
+//     font-size: 2.5rem;
+//     color: #335576;
+//     width: 80%;
+//     .hero__left {
+//       /* width: 55%; */
+//       display: flex;
+//       flex-direction: column;
+//       align-items: center;
+//       position: relative;
+//       z-index: 1;
+
+//       .hero {
+//         /* padding: 7%; */
+//         background-color: #FEFAF5;
+//         /* display: flex; */
+//         /* flex-direction: column; */
+//         /* align-items: flex-end; */
+//         /* margin-bottom: 0; */
+//         /* padding-bottom: 0;
 //RECOMMENDATIONS SECTION
 // recommendations title #335576
 //recommendations 3 itinirary cards
@@ -65,12 +130,20 @@
 
 .destinations__wrapper {
   @include flex();
+  @include mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 .destinations-card {
   @include card();
   margin: 2rem;
   overflow: hidden;
   position: relative;
+  @include mobile {
+    display: flex;
+  }
 
   &__image {
     height: 100%;

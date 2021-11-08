@@ -2,13 +2,12 @@
 
 @use "./partials/_global.scss" as *;
 @use "./partials/_colors.scss" as *;
-@use "./partials/_mixins.scss" as *;
 @use "./partials/_variables.scss" as *;
+@use "./partials/_mixins.scss" as *;
 
 //ITINIRARY
 .itinirary {
   @include main-section();
-
 
   &--hawaii {
     @extend .itinirary;
@@ -34,16 +33,6 @@
   @include flex(column, flex-start);
   color: $neutral-dark;
 
-  // @include mobile{
-  //   width: 60vw;
-  //   // height: auto;
-  // }
-
-  // // demo code
-  // @media (min-width: 600px) {
-  //   width: 50vw;
-  // }
-
   &__title {
     border-bottom: 2px solid $neutral-dark;
   }
@@ -51,5 +40,9 @@
     padding: 1rem;
     background-color: $background-color;
     margin-top: 0.5rem;
+    @include tablet {
+      padding-top: 0rem;
+      font-size: 0.85rem;
+    }
   }
 }

@@ -36,10 +36,16 @@ a {
 -logo:#335576
 -current active page underline #DB7A4E 
 */
+@media screen and (max-width: 480px) {
+  #home-link {
+    display: none;
+  }
+}
+
 .header {
   position: fixed;
   top: 0;
-  z-index: 1;
+  z-index: 8;
   padding: 2% 7% 2% 7%;
   background-color: #ffffff;
   width: 100%;
@@ -48,12 +54,22 @@ a {
   justify-content: space-between;
   align-items: baseline;
 }
+@media screen and (max-width: 480px) {
+  .header {
+    padding: 2rem;
+  }
+}
 .header__title:hover {
   transform: scale(1.2);
 }
 .header__title-link {
   color: #335576;
   font-size: 1.5rem;
+}
+@media screen and (max-width: 480px) {
+  .header__title-link {
+    font-size: 0.75rem;
+  }
 }
 .header__menu {
   display: flex;
@@ -67,6 +83,12 @@ a {
 }
 .header__menu-item:hover {
   border-bottom: 3px solid #335576;
+}
+@media screen and (max-width: 480px) {
+  .header__menu-item {
+    font-size: 0.75rem;
+    margin-left: 0.75rem;
+  }
 }
 .header__menu-item--current {
   border-bottom: 3px solid #DB7A4E;
@@ -105,33 +127,110 @@ subtitles: #DB7A4E
   flex-direction: row;
   justify-content: center;
 }
+@media screen and (max-width: 768px) {
+  .footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .footer {
+    padding: 0;
+  }
+}
 .footer__wrapper {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   width: 75%;
 }
+@media screen and (max-width: 480px) {
+  .footer__wrapper {
+    flex-direction: column;
+  }
+}
 .footer__title {
   margin-bottom: 0;
   font-size: 1.5rem;
+}
+@media screen and (max-width: 768px) {
+  .footer__title {
+    font-size: 1rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .footer__title {
+    display: none;
+  }
 }
 .footer__icon {
   height: 2.125rem;
   width: auto;
   margin-right: 2rem;
 }
+@media screen and (max-width: 768px) {
+  .footer__icon {
+    height: 1.6rem;
+    width: auto;
+    margin-top: 1rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .footer__icon {
+    height: 24px;
+    width: auto;
+    margin: 0 1rem;
+  }
+}
 .footer__subtitle {
   color: #DB7A4E;
   font-size: 0.75rem;
+}
+@media screen and (max-width: 768px) {
+  .footer__subtitle {
+    font-size: 0.55rem;
+    margin-right: 0.2rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .footer__subtitle {
+    font-size: 0.45rem;
+    margin-bottom: 1rem;
+    visibility: hidden;
+  }
 }
 .footer__info {
   margin: 0;
   font-size: 1rem;
   color: #335576;
 }
+@media screen and (max-width: 768px) {
+  .footer__info {
+    font-size: 0.75rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .contact {
+    margin-bottom: 0.3rem;
+  }
+}
 
 .hours {
-  width: 30vw;
+  width: 35vw;
+}
+@media screen and (max-width: 768px) {
+  .hours {
+    margin-bottom: 0.3rem;
+    width: 30vw;
+  }
+}
+@media screen and (max-width: 480px) {
+  .hours {
+    display: none;
+  }
 }
 .hours__wrapper {
   display: flex;
@@ -144,6 +243,20 @@ subtitles: #DB7A4E
   flex-direction: column;
   justify-content: space-between;
 }
+@media screen and (max-width: 768px) {
+  .social {
+    justify-content: flex-start;
+  }
+}
+@media screen and (max-width: 480px) {
+  .social {
+    margin-bottom: 0.3rem;
+    align-items: flex-end;
+    position: relative;
+    bottom: 30px;
+    left: 20px;
+  }
+}
 
 .itinirary, .itinirary--greece, .itinirary--iceland, .itinirary--hawaii {
   padding: 7%;
@@ -153,10 +266,12 @@ subtitles: #DB7A4E
   flex-direction: row;
   justify-content: center;
 }
-.itinirary__title {
-  margin: 0;
-  color: #ffffff;
-  font-size: 4rem;
+@media screen and (max-width: 480px) {
+  .itinirary, .itinirary--greece, .itinirary--iceland, .itinirary--hawaii {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 .itinirary--hawaii {
   background-image: url("../assets/Images/hawaii.jpg");
@@ -195,6 +310,12 @@ subtitles: #DB7A4E
   box-shadow: 7px 7px 7px black;
   transform: scale(1.2);
 }
+@media screen and (max-width: 480px) {
+  .itinirary-card {
+    width: 60vw;
+    height: auto;
+  }
+}
 .itinirary-card__title {
   border-bottom: 2px solid #000000;
 }
@@ -202,4 +323,10 @@ subtitles: #DB7A4E
   padding: 1rem;
   background-color: #FEFAF5;
   margin-top: 0.5rem;
+}
+@media screen and (max-width: 768px) {
+  .itinirary-card__copy {
+    padding-top: 0rem;
+    font-size: 0.85rem;
+  }
 }/*# sourceMappingURL=destinations.css.map */
